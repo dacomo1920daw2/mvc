@@ -1,0 +1,12 @@
+use mysql;
+create user 'adm'@'localhost' identified by "daw2019";
+create database clients;
+use clients;
+create table dadesclients(codi smallint, nom varchar(20), cognoms varchar(50), adressa varchar(50), ciutat varchar (20), codpost int, email varchar(50));
+alter table dadesclients add primary key(codi);
+grant select,insert,delete, update on clients.dadesclients to 'adm'@'localhost';
+insert into dadesclients values(1,"anna", "pérez pons", "c/pi, 2, 1r-1a", "clotcity", 2010, "app@clot.com");
+insert into dadesclients values(2,"joan", "ramírez rocamora", "c/aglà, 5, 2n-3a", "clotcity", 2016, "jrr@fje.net");
+insert into dadesclients values(3,"pere", "masponts matadepera", "c/alzina, 29, baixos 2a", "ciutatfje", 1057, "pmm@daw2.com");
+insert into dadesclients values(4,"marta", "casajoana contreras", "c/avet, 212, 4t-2a", "ciutatfje", 1045, "mcc@fjeclot.com");
+insert into dadesclients values(5,"salvador", "dalmau delacroix", "c/xiprer, 93, àtic 3a", "dawcity", 8105, "jdd@clotfje.net");
